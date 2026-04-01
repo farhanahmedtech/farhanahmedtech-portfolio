@@ -1,6 +1,6 @@
 import { FaLinkedin, FaTwitter, FaGithub, FaInstagram } from 'react-icons/fa';
 
-export const Footer = () => {
+export default function Footer  () {
   return (
     <footer className="bg-[#0d0e12] border-t border-white/5 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-8">

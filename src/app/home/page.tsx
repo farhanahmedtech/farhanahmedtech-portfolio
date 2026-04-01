@@ -27,7 +27,7 @@ const HeroSection = () => {
         </h1>
         
         <p className="text-xl md:text-3xl text-white font-medium mb-4 font-['Space_Grotesk']">
-          A Frontend Web Developer with <span className="text-cyan-400">2 years</span> of experience
+          A Mern Stack Web Developer with <span className="text-cyan-400">2 years</span> of experience
         </p>
         
         <p className="text-slate-400 text-lg mb-12 max-w-xl mx-auto font-['Space_Grotesk'] leading-relaxed">

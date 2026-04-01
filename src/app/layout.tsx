@@ -21,3 +21,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   );
 }
 
+export const metadata = {
+  title: "Farhan Ahmed - Web Developer",
+  description: "I am a Mern Stack Developer in MogoDB, Express.js, React.js, Node.js and Next.js. View my portfolio and projects.",
+  keywords: ["Farhan Ahmed", "Web Developer", "Farhan Ahmed Tech", "Next.js Developer", "Frontend Developer Pakistan"],
+};

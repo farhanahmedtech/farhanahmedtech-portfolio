@@ -6,13 +6,13 @@ import { Space_Grotesk } from 'next/font/google';
 
 const space = Space_Grotesk({
   subsets: ['latin'],
-  display: 'swap', // Recommended font display strategy
+  display: 'swap', 
 });
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={`space.className`}>
+      <body className={`${space.className} bg-[#0d0e12] text-white min-h-screen`}>
         <Navbar />
         {children}
         <Footer />
@@ -20,3 +20,4 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     </html>
   );
 }
+

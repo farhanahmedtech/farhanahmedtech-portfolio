@@ -1,13 +1,13 @@
 import { Code, ExternalLink } from "lucide-react";
 
-export const HeroSection = () => {
+const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden bg-[#0d0e12]">
       {/* Retro Grid Background */}
       <div className="absolute inset-0 z-0 opacity-20" 
            style={{ backgroundImage: 'linear-gradient(#1e1b4b 1px, transparent 1px), linear-gradient(90deg, #1e1b4b 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
       </div>
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-[#0d0e12]/80 to-[#0d0e12]"></div>
+      <div className="absolute inset-0 z-0 bg-linear-to-b from-transparent via-[#0d0e12]/80 to-[#0d0e12]"></div>
 
       {/* Decorative Neon Elements */}
       <div className="absolute top-[20%] left-[10%] w-64 h-64 bg-purple-600/20 blur-[120px] rounded-full animate-pulse"></div>
@@ -23,7 +23,7 @@ export const HeroSection = () => {
       {/* Main Content */}
       <div className="z-10 text-center max-w-4xl px-8">
         <h1 className="text-7xl md:text-[120px] sm:text-[50px] font-black tracking-tighter leading-none mb-6 font-['Space_Grotesk']">
-          Hi, I’m <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-400 to-purple-600 drop-shadow-[0_0_30px_rgba(168,85,247,0.5)] ">Farhan</span> 
+          Hi, I’m <span className="text-transparent bg-clip-text bg-linear-to-r from-white via-purple-400 to-purple-600 drop-shadow-[0_0_30px_rgba(168,85,247,0.5)] ">Farhan</span> 
         </h1>
         
         <p className="text-xl md:text-3xl text-white font-medium mb-4 font-['Space_Grotesk']">
@@ -60,7 +60,7 @@ export const HeroSection = () => {
       <div className="absolute bottom-10 left-10 hidden lg:block">
          <div className="text-[10px] font-mono text-slate-600 uppercase tracking-widest">
             Farhan's Tech
-            <div className="w-32 h-[2px] bg-slate-800 mt-2 relative overflow-hidden">
+            <div className="w-32 h-0.5 bg-slate-800 mt-2 relative overflow-hidden">
                <div className="absolute inset-0 bg-purple-500 w-1/3 animate-ping opacity-50"></div>
             </div>
          </div>
@@ -68,3 +68,5 @@ export const HeroSection = () => {
     </section>
     );
 };
+
+export default HeroSection

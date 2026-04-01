@@ -1,4 +1,4 @@
-import { HeroSection } from "./home/page";
+import HeroSection  from "./home/page";
 
 
 export default function RetroFuturismPortfolio() {

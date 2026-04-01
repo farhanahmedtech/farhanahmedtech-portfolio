@@ -46,7 +46,7 @@ export default function Navbar () {
           {['Home', 'About', 'Skills', 'Contact'].map((item) => (
             <Link 
               key={item} 
-              href={`#${item.toLowerCase()}`}
+              href={item === "HeroSection" ? "/" : `/${item.toLowerCase()}`}
               onClick={() => setIsOpen(false)}
               className="text-lg font-['Space_Grotesk'] font-bold text-slate-300 hover:text-purple-400"
             >

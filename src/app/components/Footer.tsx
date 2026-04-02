@@ -19,7 +19,7 @@ export default function Footer  () {
             <ul className="space-y-4 font-['Space_Grotesk']">
               {['Home', 'About', 'Projects', 'Skills', 'Contact'].map(link => (
                 <li key={link}>
-                  <a href={`#${link.toLowerCase()}`} className="text-[#faf8fe]/40 hover:text-[#d095ff] text-sm transition-colors">{link}</a>
+                  <a href={`${link.toLowerCase()}`} className="text-[#faf8fe]/40 hover:text-[#d095ff] text-sm transition-colors">{link}</a>
                 </li>
               ))}
             </ul>
@@ -29,14 +29,14 @@ export default function Footer  () {
             <h4 className="text-[#faf8fe] font-bold font-['Space_Grotesk'] mb-6">Connect</h4>
             <div className="flex gap-4">
               {[
-                { icon: <FaGithub size={20} />, label: 'GitHub' },
-                { icon: <FaLinkedin size={20} />, label: 'LinkedIn' },
-                { icon: <FaTwitter size={20} />, label: 'X' },
-                { icon: <FaInstagram size={20} />, label: 'Instagram' }
+                { icon: <FaGithub size={20} />, label: 'GitHub', href:"https://github.com/farhanahmedtech" },
+                { icon: <FaLinkedin size={20} />, label: 'LinkedIn', href:"https://www.linkedin.com/in/farhan-ahmed-tech" },
+                { icon: <FaTwitter size={20} />, label: 'X', href:"https://x.com/farhanahmedtech" },
+                { icon: <FaInstagram size={20} />, label: 'Instagram', href:"https://www.instagram.com/farhanahmedtech/?hl=en" }
               ].map((social, idx) => (
                 <a 
                   key={idx} 
-                  href="#" 
+                  href={social.href} 
                   aria-label={social.label}
                   className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-[#faf8fe]/40 hover:bg-[#d095ff] hover:text-[#0d0e12] transition-all duration-300 active:scale-90 shadow-lg"
                 >

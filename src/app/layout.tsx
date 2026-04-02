@@ -12,6 +12,10 @@ const space = Space_Grotesk({
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <title>Farhan Ahmed Portfolio</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+      </head>
       <body className={`${space.className} bg-[#0d0e12] text-white min-h-screen`}>
         <Navbar />
         {children}

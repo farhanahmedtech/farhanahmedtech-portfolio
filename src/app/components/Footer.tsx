@@ -48,8 +48,8 @@ export default function Footer  () {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-white/5 text-[#faf8fe]/20 text-xs font-medium uppercase tracking-widest">
-          <p>© 2026 Architectural Synthesist. All rights reserved.</p>
-          <p>Built with Next.js & Tailwind CSS</p>
+          <p>© 2026 Farhan Ahmed. All rights reserved.</p>
+          <p> Designed & Developed by Farhan Ahmed | Modern Web Standards</p>
         </div>
       </div>
     </footer>

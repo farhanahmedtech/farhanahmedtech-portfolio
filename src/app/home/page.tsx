@@ -1,9 +1,8 @@
 'use client'
 import { Code, ExternalLink } from "lucide-react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const HeroSection = () => {
-  const router = useRouter()
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden bg-[#0d0e12]">
       {/* Retro Grid Background */}
@@ -38,10 +37,10 @@ const HeroSection = () => {
         </p>
 
         <div className="flex font-['Space_Grotesk'] flex-col sm:flex-row items-center justify-center gap-6">
-          <button onClick={()=> router.push("https://github.com/farhanahmedtech")} className="bg-purple-500  hover:bg-purple-600 text-black px-10 py-4 rounded-lg font-black text-lg shadow-[0_10px_40px_rgba(168,85,247,0.4)] transition-all active:scale-95">
+          <Link href="https://github.com/farhanahmedtech" target="_blank"  className="bg-purple-500  hover:bg-purple-600 text-black px-10 py-4 rounded-lg font-black text-lg shadow-[0_10px_40px_rgba(168,85,247,0.4)] transition-all active:scale-95">
             View My Projects
-          </button>
-          <button onClick={() => router.push("mailto:farhanahmedmirali@gmail.com")} className="flex items-center gap-3 text-white font-bold hover:text-purple-400 transition-colors border border-white/10 bg-white/5 px-10 py-4 rounded-lg">
+          </Link>
+          <button type="button" onClick={() => window.location.href = "mailto:farhanahmedmirali@gmail.com"} className="flex items-center gap-3 text-white font-bold hover:text-purple-400 transition-colors border border-white/10 bg-white/5 px-10 py-4 rounded-lg">
             Contact Me <ExternalLink size={18} />
           </button>
         </div>

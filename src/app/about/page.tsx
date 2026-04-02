@@ -1,4 +1,5 @@
 import { Cpu, Download, Layers, Layout } from "lucide-react";
+import Image from "next/image";
 
 const AboutHero = () => {
   return (
@@ -9,13 +10,11 @@ const AboutHero = () => {
              <span className="text-[#d095ff] text-[10px] font-black uppercase tracking-[0.4em] font-['Space_Grotesk']">About Farhan</span>
              <div className="h-px w-12 bg-[#d095ff]/30"></div>
           </div>
-          <h1 className="text-6xl md:text-9xl font-black text-white font-['Space_Grotesk'] tracking-tighter leading-[0.85] mb-12">
-            Engineering digital <br />
-            <span className="text-[#52f9fc]">clarity</span> from <br />
-            complex stories.
+          <h1 className="text-6xl md:text-9xl font-black text-[#52f9fc] font-['Space_Grotesk'] tracking-tighter leading-[0.85] mb-12">
+            Ship real things <br />
           </h1>
           <div className="flex flex-wrap gap-8 text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] font-['Space_Grotesk']">
-             <span>Frontend Developer</span>
+             <span>Mern Stack Developer</span>
              <span className="text-[#d095ff]/20">/</span>
              <span>UI Enthusiast</span>
              <span className="text-[#d095ff]/20">/</span>
@@ -34,15 +33,15 @@ const AboutHero = () => {
            <div className="space-y-6 text-slate-400 font-['space_Grotesk'] leading-relaxed">
               <p>My path began 2 years ago at <span className="text-white font-bold">SMIT (Saylani Mass IT Training)</span>, where I first discovered the power of code. What started as curiosity evolved into a relentless pursuit of excellence.</p>
               <p>My growth is rooted in <span className="text-[#52f9fc] font-bold">consistency</span>—building day by day, learning through every challenge, and refining my craft to deliver world-class digital experiences. I believe that technical precision is the floor, but emotional connection is the ceiling.</p>
-              <p>Transitioning from a student to a professional contributor required more than just syntax; it required an architect's mindset. Today, I treat every project as a unique story waiting to be told through clean code and intuitive motion.</p>
+              <p>From learning the basics to building real-world solutions, I approach every project as a story—crafted with clean code, intuitive design, and scalable architecture.</p>
            </div>
         </div>
 
         {/* Profile Image Section */}
         <div className="lg:col-span-6 relative rounded-3xl overflow-hidden group">
-           <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop" 
-              alt="Farhan Ahmed - Portrait" 
+           <Image width={600} height={400}
+              src="/images/Pic.jpeg"
+              alt="Farhan Ahmed Tech" 
               className="w-full h-full object-cover grayscale brightness-75 group-hover:scale-105 transition-transform duration-700"
            />
            <div className="absolute inset-0 bg-linear-to-t from-[#0d0e12] to-transparent opacity-60"></div>
@@ -64,7 +63,7 @@ const ExpertiseGrid = () => {
       <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
          <h2 className="text-6xl font-black text-white font-['Space_Grotesk'] tracking-tighter">Current Expertise</h2>
          <p className="text-slate-500 text-sm font-['Space_Grotesk'] max-w-xs leading-relaxed">
-            A toolkit designed for speed, scalability, and aesthetic precision.
+           Speed. Scalability. Precision. Built for the modern web.
          </p>
       </div>
 
@@ -120,10 +119,10 @@ export const FutureGoals = () => {
       <div className="flex flex-col lg:flex-row gap-24 items-center">
         <div className="lg:w-1/2 relative">
            <div className="aspect-square bg-[#121318] rounded-[3rem] overflow-hidden border border-white/5">
-              <img 
-                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop" 
+              <Image width={600} height={400}
+                src="/images/futuregoals.png"
                 alt="Workspace Concept" 
-                className="w-full h-full object-cover opacity-30 grayscale mix-blend-screen"
+                className="w-full h-full object-cover mix-blend-screen"
               />
               <div className="absolute inset-0 bg-linear-to-br from-[#d095ff]/10 to-transparent"></div>
            </div>
@@ -137,18 +136,18 @@ export const FutureGoals = () => {
            <div className="space-y-16">
               <GoalCard 
                 number="01" 
-                title="Pushing Boundaries" 
-                desc="Continuous exploration of emerging WebGL and 3D interactions to bridge the gap between static screens and immersive reality." 
+                title="Cutting-Edge Interfaces" 
+                desc="Exploring the latest in React, Next.js, and 3D web interactions to craft interfaces that are intuitive, immersive, and future-ready." 
               />
               <GoalCard 
                 number="02" 
-                title="Scalable Systems" 
-                desc="Developing sophisticated design systems that empower teams to build cohesive products faster without compromising on quality." 
+                title="Performance Mastery" 
+                desc="Optimizing frontend and backend performance for lightning-fast load times, smooth experiences, and top SEO rankings." 
               />
               <GoalCard 
                 number="03" 
-                title="Deep Learning" 
-                desc="Mastering the intersection of AI and Frontend to create intelligent, predictive user interfaces that anticipate human needs." 
+                title="Full-Stack Growth" 
+                desc="Continuously learning new technologies, frameworks, and best practices to deliver complete, end-to-end web solutions." 
               />
            </div>
         </div>
@@ -163,7 +162,7 @@ export const CTASection = () => {
        <div className="bg-[#121318] p-24 rounded-[3.5rem] border border-white/5 text-center relative overflow-hidden group">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#d095ff]/10 blur-[120px] rounded-full"></div>
           
-          <h2 className="text-4xl md:text-8xl font-black text-white font-['Space_Grotesk'] tracking-tighter mb-12 leading-tight">
+          <h2 className="text-4xl sm:text-center text-center md:text-8xl font-black text-white font-['Space_Grotesk'] tracking-tighter mb-12 leading-tight">
              Ready to build <br />
              something <span className="text-[#52f9fc] italic">legendary</span>?
           </h2>

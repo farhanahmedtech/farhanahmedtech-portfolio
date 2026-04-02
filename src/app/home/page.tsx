@@ -1,4 +1,3 @@
-'use client'
 import { Code, ExternalLink } from "lucide-react";
 import Link from "next/link";
 
@@ -40,9 +39,9 @@ const HeroSection = () => {
           <Link href="https://github.com/farhanahmedtech" target="_blank"  className="bg-purple-500  hover:bg-purple-600 text-black px-10 py-4 rounded-lg font-black text-lg shadow-[0_10px_40px_rgba(168,85,247,0.4)] transition-all active:scale-95">
             View My Projects
           </Link>
-          <button type="button" onClick={() => window.location.href = "mailto:farhanahmedmirali@gmail.com"} className="flex items-center gap-3 text-white font-bold hover:text-purple-400 transition-colors border border-white/10 bg-white/5 px-10 py-4 rounded-lg">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=farhanahmedmirali@gmail.com&su=Project%20Inquiry&body=Hi%20Farhan,%0AI%20want%20to%20discuss%20a%20project%20with%20you." target="_blank"  rel="noopener noreferrer" className="flex items-center gap-3 text-white font-bold hover:text-purple-400 transition-colors border border-white/10 bg-white/5 px-10 py-4 rounded-lg">
             Contact Me <ExternalLink size={18} />
-          </button>
+          </a>
         </div>
       </div>
 

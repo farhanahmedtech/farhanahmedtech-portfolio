@@ -1,5 +1,6 @@
 import { Cpu, Download, Layers, Layout } from "lucide-react";
 import Image from "next/image";
+import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const AboutHero = () => {
   return (
@@ -57,47 +58,60 @@ const AboutHero = () => {
   );
 };
 
-const ExpertiseGrid = () => {
+const ProfessionalLinksHub = () => {
+  const links = [
+    { href: "https://github.com/farhanahmedtech", icon: FaGithub, label: "Github" },
+    { href: "https://www.linkedin.com/in/farhan-ahmed-tech", icon: FaLinkedin, label: "Linkedin" },
+    { href: "https://x.com/farhanahmedtech", icon: FaTwitter, label: "X / Twitter" },
+    { href: "https://www.instagram.com/farhanahmedtech/?hl=en", icon: FaInstagram, label: "Instagram" },
+  ];
+
   return (
-    <section className="py-32 px-8 max-w-7xl mx-auto border-b border-white/5">
-      <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-         <h2 className="text-6xl font-black text-white font-['Space_Grotesk'] tracking-tighter">Current Expertise</h2>
-         <p className="text-slate-500 text-sm font-['Space_Grotesk'] max-w-xs leading-relaxed">
-           Speed. Scalability. Precision. Built for the modern web.
-         </p>
+    <section className="py-24 px-8 flex flex-col items-center justify-center bg-[#0d0e12] min-h-100">
+      {/* Header Context */}
+      <div className="mb-16 text-center">
+        <h2 className="text-3xl md:text-5xl font-black text-white font-['Space_Grotesk'] tracking-tighter mb-4 uppercase">
+          Lets <span className="text-[#8A2BE2]">Connect</span>
+        </h2>
+        <p className="text-slate-500 font-['Space_Grotesk'] text-sm tracking-widest uppercase">
+        Explore my work and connect with me online
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-         {/* Core Stack */}
-         <div className="md:col-span-2 bg-[#121318] p-12 rounded-3xl border border-white/5 hover:border-[#d095ff]/30 transition-colors group">
-            <div className="w-12 h-12 bg-[#d095ff]/10 rounded-xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-               <Layers className="text-[#d095ff]" size={24} />
+      {/* Interactive Links Row */}
+      <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+        {links.map((link, idx) => (
+          <a
+            key={idx}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.label}
+            className="group relative flex flex-col items-center gap-4"
+          >
+            {/* Tactile Icon Container */}
+            <div className="relative flex items-center justify-center w-20 h-20 bg-[#121318] border border-white/5 rounded-2xl transition-all duration-500 hover:border-[#8A2BE2]/50 hover:bg-[#1a1b23] hover:shadow-[0_20px_40px_rgba(138,43,226,0.15)] active:scale-95 overflow-hidden">
+              <link.icon 
+                className="text-white/60 transition-all duration-500 group-hover:text-[#8A2BE2] group-hover:scale-110 z-10" 
+                size={32} 
+              />
+              {/* Subtle inner glow on hover */}
+              <div className="absolute inset-0 bg-[#8A2BE2]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
-            <h3 className="text-2xl font-black text-white font-['Space_Grotesk'] mb-4">Core Stack</h3>
-            <p className="text-slate-500 text-sm font-['Space_Grotesk'] mb-10">Building robust architectures with modern standards.</p>
-            <div className="flex flex-wrap gap-3">
-               {['REACT.JS', 'NEXT.JS', 'TYPESCRIPT', 'Express.js', 'Mongoose'].map(skill => (
-                 <span key={skill} className="text-[10px] font-bold text-slate-400 border border-white/10 px-4 py-2 rounded-lg bg-white/5 uppercase tracking-wider">{skill}</span>
-               ))}
-            </div>
-         </div>
 
-         {/* Individual Cards */}
-         <div className="bg-[#121318] p-12 rounded-3xl border border-white/5 flex flex-col items-center justify-center text-center group hover:bg-[#1a1b23] transition-all">
-            <div className="w-12 h-12 bg-[#52f9fc]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#52f9fc] transition-colors">
-               <Cpu className="text-[#52f9fc] group-hover:text-[#0d0e12] transition-colors" size={24} />
-            </div>
-            <h4 className="text-lg font-bold text-white font-['Space_Grotesk'] mb-2">Performance</h4>
-            <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Speed is a Feature</span>
-         </div>
+            {/* Label - Revealed on Hover */}
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-600 opacity-40 group-hover:opacity-100 group-hover:text-[#8A2BE2] transition-all duration-300">
+              {link.label}
+            </span>
+          </a>
+        ))}
+      </div>
 
-         <div className="bg-[#121318] p-12 rounded-3xl border border-white/5 flex flex-col items-center justify-center text-center group hover:bg-[#1a1b23] transition-all">
-            <div className="w-12 h-12 bg-[#d095ff]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#d095ff] transition-colors">
-               <Layout className="text-[#d095ff] group-hover:text-[#0d0e12] transition-colors" size={24} />
-            </div>
-            <h4 className="text-lg font-bold text-white font-['Space_Grotesk'] mb-2">Responsive</h4>
-            <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Adaptive Ecosystems</span>
-         </div>
+      {/* Optional CTA context */}
+      <div className="mt-20 pt-10 border-t border-white/5 w-full max-w-2xl text-center">
+        <p className="text-slate-700 text-[10px] font-bold uppercase tracking-[0.4em]">
+         Available for hire | Projects | Collaborations
+        </p>
       </div>
     </section>
   );
@@ -156,38 +170,13 @@ export const FutureGoals = () => {
   );
 };
 
-export const CTASection = () => {
-  return (
-    <section className="py-40 px-8 max-w-7xl mx-auto">
-       <div className="bg-[#121318] p-24 rounded-[3.5rem] border border-white/5 text-center relative overflow-hidden group">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#d095ff]/10 blur-[120px] rounded-full"></div>
-          
-          <h2 className="text-4xl sm:text-center text-center md:text-8xl font-black text-white font-['Space_Grotesk'] tracking-tighter mb-12 leading-tight">
-             Ready to build <br />
-             something <span className="text-[#52f9fc] italic">legendary</span>?
-          </h2>
-
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-8">
-             <button className="bg-linear-to-r from-[#d095ff] to-[#bd70ff] text-[#0d0e12] px-12 py-5 rounded-2xl font-black text-lg tracking-tight shadow-[0_20px_50px_rgba(208,149,255,0.4)] hover:scale-105 transition-all">
-                START A PROJECT
-             </button>
-             <button className="flex items-center gap-3 text-white/80 font-bold hover:text-white transition-colors group/btn px-10 py-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10">
-                DOWNLOAD CV <Download size={20} className="group-hover/btn:translate-y-1 transition-transform" />
-             </button>
-          </div>
-       </div>
-    </section>
-  );
-};
-
 const About = () => {
     return(
     <div>
         <AboutHero/>
-        <ExpertiseGrid/>
+        <ProfessionalLinksHub />
         <GoalCard/>
         <FutureGoals/>
-        <CTASection/>
     </div>
     )
 }

@@ -62,7 +62,7 @@ const SkillsSection = () => {
         {/* Header Section */}
         <div className="mb-24">
           <span className="text-[#52f9fc] text-[10px] font-black uppercase tracking-[0.4em] font-['Space_Grotesk'] mb-6 block">Tech Stack Highlights</span>
-          <h1 className="text-7xl md:text-9xl font-black text-white font-['Space_Grotesk'] tracking-tighter leading-[0.85] uppercase">
+          <h1 className="text-6xl md:text-9xl font-black text-white font-['Space_Grotesk'] tracking-tighter leading-[0.85] uppercase">
             Crafting Code &<span className="text-transparent bg-clip-text bg-linear-to-r from-[#8A2BE2] to-[#52f9fc]">Creativity</span>
           </h1>
           <div className="h-1 w-32 bg-[#52f9fc] mt-8"></div>

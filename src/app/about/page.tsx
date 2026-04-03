@@ -1,5 +1,6 @@
 import { Cpu, Download, Layers, Layout } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const AboutHero = () => {
@@ -81,7 +82,7 @@ const ProfessionalLinksHub = () => {
       {/* Interactive Links Row */}
       <div className="flex flex-wrap justify-center gap-8 md:gap-12">
         {links.map((link, idx) => (
-          <a
+          <Link
             key={idx}
             href={link.href}
             target="_blank"
@@ -103,10 +104,9 @@ const ProfessionalLinksHub = () => {
             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-600 opacity-40 group-hover:opacity-100 group-hover:text-[#8A2BE2] transition-all duration-300">
               {link.label}
             </span>
-          </a>
+          </Link>
         ))}
       </div>
-
       {/* Optional CTA context */}
       <div className="mt-20 pt-10 border-t border-white/5 w-full max-w-2xl text-center">
         <p className="text-slate-700 text-[10px] font-bold uppercase tracking-[0.4em]">

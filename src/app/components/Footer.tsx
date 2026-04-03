@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FaLinkedin, FaTwitter, FaGithub, FaInstagram } from 'react-icons/fa';
 
 export default function Footer  () {
@@ -19,7 +20,7 @@ export default function Footer  () {
             <ul className="space-y-4 font-['Space_Grotesk']">
               {['Home', 'About', 'Projects', 'Skills', 'Contact'].map(link => (
                 <li key={link}>
-                  <a href={`${link.toLowerCase()}`} className="text-[#faf8fe]/40 hover:text-[#d095ff] text-sm transition-colors">{link}</a>
+                  <Link href={`${link.toLowerCase()}`} className="text-[#faf8fe]/40 hover:text-[#d095ff] text-sm transition-colors">{link}</Link>
                 </li>
               ))}
             </ul>
@@ -34,7 +35,7 @@ export default function Footer  () {
                 { icon: <FaTwitter size={20} />, label: 'X', href:"https://x.com/farhanahmedtech" },
                 { icon: <FaInstagram size={20} />, label: 'Instagram', href:"https://www.instagram.com/farhanahmedtech/?hl=en" }
               ].map((social, idx) => (
-                <a 
+                <Link 
                   key={idx} 
                   href={social.href} 
                   aria-label={social.label}
@@ -42,7 +43,7 @@ export default function Footer  () {
                   target='_blank'
                 >
                   {social.icon}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

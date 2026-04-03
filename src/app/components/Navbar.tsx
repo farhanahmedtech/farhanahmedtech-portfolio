@@ -26,9 +26,9 @@ export default function Navbar () {
               {item}
             </Link>
           ))}
-          <button className="bg-purple-500 hover:bg-purple-600 text-black px-6 py-2 rounded-lg font-bold transition-all active:scale-95 shadow-[0_0_20px_rgba(168,85,247,0.4)]">
-            Resume
-          </button>
+          <Link href="/projects" className="bg-purple-500 hover:bg-purple-600 text-black px-6 py-2 rounded-lg font-bold transition-all active:scale-95 shadow-[0_0_20px_rgba(168,85,247,0.4)]">
+            View Projects
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -53,9 +53,9 @@ export default function Navbar () {
               {item}
             </Link>
           ))}
-          <button className="bg-purple-500 text-black px-10 py-3 rounded-lg font-bold shadow-lg">
-            Resume
-          </button>
+          <Link href="/projects" className="bg-purple-500 text-black px-10 py-3 rounded-lg font-bold shadow-lg">
+            View Projects
+          </Link>
         </div>
       )}
     </nav>

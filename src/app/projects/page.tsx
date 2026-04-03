@@ -1,4 +1,6 @@
 import { ExternalLink, Code } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
 
 type ProjectProps = {
@@ -20,10 +22,10 @@ const ProjectCard = ({ number, title, description, tags, githubUrl, demoUrl, ima
 
     {/* Project Image Placeholder / Visual */}
     <div className="relative aspect-16/10 bg-[#1a1b23] rounded-3xl mb-10 overflow-hidden border border-white/5">
-      <img 
+      <Image width={600} height={400}  
         src={imageUrl} 
         alt={title}
-        className="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105"
+        className="w-full h-full object-cover group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-linear-to-t from-[#121318] to-transparent opacity-60"></div>
     </div>
@@ -50,16 +52,16 @@ const ProjectCard = ({ number, title, description, tags, githubUrl, demoUrl, ima
 
     {/* Actions */}
     <div className="flex flex-wrap gap-4">
-      <a 
+      <Link 
         href={githubUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center gap-2 border border-white/10 text-white px-6 py-3 rounded-xl text-xs font-bold font-['Space_Grotesk'] hover:bg-white/5 transition-colors group/btn"
       >
         <FaGithub size={16} className="group-hover/btn:scale-110 transition-transform" />
-        GitHub
-      </a>
-      <a 
+        Source Code
+      </Link>
+      <Link 
         href={demoUrl}
         target="_blank"
         rel="noopener noreferrer"
@@ -67,7 +69,7 @@ const ProjectCard = ({ number, title, description, tags, githubUrl, demoUrl, ima
       >
         <ExternalLink size={16} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
         Live Demo
-      </a>
+      </Link>
     </div>
   </div>
 );
@@ -76,31 +78,22 @@ const ProjectsSection = () => {
   const projects = [
     {
       number: "01",
-      title: "NeuralNexus Engine",
-      description: "Real-time AI orchestration platform for managing multi-agent workflows with architectural precision.",
-      tags: ["NEXT.JS", "MONGODB", "TAILWIND CSS"],
-      imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
-      githubUrl: "#",
-      demoUrl: "#"
+      title: "Quiz App",
+      description: "A dynamic quiz application designed to test knowledge across multiple topics with real-time scoring and instant feedback. Built with a focus on performance, clean UI, and an engaging user experience.",
+      tags: ["React.js", "Typescript", "TAILWIND"],
+      imageUrl: "/QuizApp.png",
+      githubUrl: "https://github.com/farhanahmedtech/quiz-react",
+      demoUrl: "https://quiz-reactapp.vercel.app/"
     },
     {
       number: "02",
-      title: "Void Archiver",
-      description: "Ultra-secure decentralized storage solution utilizing fragmented block architectures for data integrity.",
-      tags: ["TYPESCRIPT", "PRISMA", "GRAPHQL"],
-      imageUrl: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2070&auto=format&fit=crop",
-      githubUrl: "#",
-      demoUrl: "#"
+      title: "Traditional Site",
+      description: "A traditional website architecture crafted for clarity and stability, offering well-organized content, intuitive navigation, and a dependable user experience across all devices.",
+      tags: ["React.js", "Typescript", "Tailwind"],
+      imageUrl: "/traditionalsite.png",
+      githubUrl: "https://github.com/farhanahmedtech/traditional-web-react",
+      demoUrl: "https://traditional-site-web.vercel.app/"
     },
-    {
-      number: "03",
-      title: "CyberGrid Visualizer",
-      description: "Interactive 3D data visualization dashboard for monitoring complex microservice networks in real-time.",
-      tags: ["REACT", "THREE.JS", "R3F"],
-      imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
-      githubUrl: "#",
-      demoUrl: "#"
-    }
   ];
 
   return (

@@ -1,4 +1,8 @@
-import { Cpu, Download, Layers, Layout } from "lucide-react";
+export const metadata = {
+  title: "About Me - Farhan Ahmed",
+  description: "Learn more about Farhan Ahmed - Web Developer",
+};
+
 import Image from "next/image";
 import Link from "next/link";
 import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";

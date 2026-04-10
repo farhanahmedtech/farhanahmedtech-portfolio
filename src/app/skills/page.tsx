@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Skills - Farhan Ahmed",
+  description: "Skills Section",
+};
+
 import { 
   Code, 
   Layers, 

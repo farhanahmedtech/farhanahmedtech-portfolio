@@ -1,3 +1,11 @@
+export const metadata = {
+  title: "Farhan Ahmed - Web Developer",
+  description: "Modern Web Developer specializing in React & Next.js",
+  keywords: ["Web Developer", "Next.js", "React Developer", "Portfolio", "Farhan Ahmed", "Farhan Ahmed Tech"],
+  authors: [{ name: "Farhan Ahmed" }],
+  metadataBase: new URL("https://farhanahmed.vercel.app"),
+};
+
 import './globals.css';
 import Navbar  from './components/Navbar';
 import Footer  from './components/Footer';
@@ -13,7 +21,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <title>Farhan Ahmed Portfolio</title>
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
       </head>
       <body className={`${space.className} bg-[#0d0e12] text-white min-h-screen`}>
@@ -24,9 +31,3 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     </html>
   );
 }
-
-export const metadata = {
-  title: "Farhan Ahmed - Web Developer",
-  description: "I am a Mern Stack Developer in MogoDB, Express.js, React.js, Node.js and Next.js. View my portfolio and projects.",
-  keywords: ["Farhan Ahmed", "Web Developer", "Farhan Ahmed Tech", "Next.js Developer", "Frontend Developer Pakistan"],
-};

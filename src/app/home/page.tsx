@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Farhan Ahmed | Developer",
+  description: "Welcome to my portfolio website",
+};
+
 import { Code, ExternalLink } from "lucide-react";
 import Link from "next/link";
 

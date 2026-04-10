@@ -1,9 +1,26 @@
 'use client'
 import { Send, Mail, MapPin } from 'lucide-react';
 import emailjs from "@emailjs/browser"
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import { message } from "antd"
 
 const ContactSection = () => {
+
+  const [formData, setFormData] = useState({
+  name: "",
+  email: "",
+  message: ""
+});
+
+const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const { name, value } = e.target;
+
+  setFormData((prev) => ({
+    ...prev,
+    [name]: value
+  }));
+};
+
   const form = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e:React.FormEvent<HTMLFormElement>) => {
@@ -13,19 +30,36 @@ const ContactSection = () => {
     const templateid = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!
     const publicid = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
 
-    emailjs
-      .sendForm(serviceid, templateid, form.current!, {
-        publicKey: publicid
-      })
+    if (!formData.name || !formData.email || !formData.message) {
+    return message.error("Please fill all fields");
+  }
+    
+    emailjs.send(
+    serviceid,
+    templateid,
+    {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message,
+    },
+    {
+      publicKey: publicid,
+    }
+  )
       .then(
         () => {
-          
+          message.success("Message Sent Successfully")
+          setFormData({
+        name: "",
+        email: "",
+        message: ""
+      });
         },
         (error:unknown) => {
           if (error instanceof Error) {
-          
+          message.error(error.message || "Failed to Send")
           } else {
-          console.log('FAILED...', error);
+            message.error("Failed to Send")
         }
         },
       );
@@ -55,9 +89,12 @@ const ContactSection = () => {
           <div className="space-y-3">
             <label className="text-[10px] font-black text-[#8A2BE2] uppercase tracking-[0.3em] ml-2">Name</label>
             <input 
-              type="text" 
-              placeholder="NAME"
-              className="w-full bg-white/5 border border-white/10 px-8 py-5 rounded-2xl text-white placeholder:text-slate-700 focus:outline-none focus:border-[#8A2BE2]/50 focus:bg-white/10 transition-all text-sm font-bold uppercase tracking-widest"
+              type="text"
+              name='name'
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Name"
+              className="w-full bg-white/5 border border-white/10 px-8 py-5 rounded-2xl text-white placeholder:text-slate-700 focus:outline-none focus:border-[#8A2BE2]/50 focus:bg-white/10 transition-all text-sm font-bold tracking-widest"
             />
           </div>
 
@@ -65,22 +102,28 @@ const ContactSection = () => {
             <label className="text-[10px] font-black text-[#8A2BE2] uppercase tracking-[0.3em] ml-2">Email</label>
             <input 
               type="email" 
+              name='email'
+              value={formData.email}
+              onChange={handleChange}
               placeholder="Email"
-              className="w-full bg-white/5 border border-white/10 px-8 py-5 rounded-2xl text-white placeholder:text-slate-700 focus:outline-none focus:border-[#8A2BE2]/50 focus:bg-white/10 transition-all text-sm font-bold uppercase tracking-widest"
+              className="w-full bg-white/5 border border-white/10 px-8 py-5 rounded-2xl text-white placeholder:text-slate-700 focus:outline-none focus:border-[#8A2BE2]/50 focus:bg-white/10 transition-all text-sm font-bold tracking-widest"
             />
           </div>
 
           <div className="space-y-3">
             <label className="text-[10px] font-black text-[#8A2BE2] uppercase tracking-[0.3em] ml-2">Project Brief</label>
             <textarea 
+              name='message'
+              value={formData.message}
+              onChange={handleChange}
               rows={5}
               placeholder="Describe About Project or other"
-              className="w-full bg-white/5 border border-white/10 px-8 py-6 rounded-3xl text-white placeholder:text-slate-700 focus:outline-none focus:border-[#8A2BE2]/50 focus:bg-white/10 transition-all text-sm font-bold resize-none uppercase tracking-widest"
+              className="w-full bg-white/5 border border-white/10 px-8 py-6 rounded-3xl text-white placeholder:text-slate-700 focus:outline-none focus:border-[#8A2BE2]/50 focus:bg-white/10 transition-all text-sm font-bold resize-none tracking-widest"
             ></textarea>
           </div>
 
           <button 
-            type="submit"
+          type="submit"
             className="w-full relative group/btn overflow-hidden bg-[#8A2BE2] text-white py-5 rounded-2xl font-black text-sm uppercase tracking-[0.2em] shadow-[0_20px_40px_rgba(138,43,226,0.4)] hover:shadow-[0_25px_50px_rgba(138,43,226,0.6)] transition-all active:scale-95 duration-300 flex items-center justify-center gap-3"
           >
             <span className="relative z-10">Submit</span>

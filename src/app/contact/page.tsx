@@ -1,7 +1,35 @@
 'use client'
 import { Send, Mail, MapPin } from 'lucide-react';
+import emailjs from "@emailjs/browser"
+import { useRef } from 'react';
 
 const ContactSection = () => {
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const serviceid = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!
+    const templateid = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!
+    const publicid = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+
+    emailjs
+      .sendForm(serviceid, templateid, form.current!, {
+        publicKey: publicid
+      })
+      .then(
+        () => {
+          
+        },
+        (error:unknown) => {
+          if (error instanceof Error) {
+          
+          } else {
+          console.log('FAILED...', error);
+        }
+        },
+      );
+  };
   return (
     <section className="min-h-screen bg-black text-white font-['Space_Grotesk'] selection:bg-[#8A2BE2] selection:text-black relative overflow-hidden flex flex-col items-center justify-center py-20 px-8">
       
@@ -23,7 +51,7 @@ const ContactSection = () => {
           <Send className="text-[#52f9fc]" size={32} />
         </div>
 
-        <form className="space-y-10"  onSubmit={(e) => e.preventDefault()}>
+        <form ref={form} className="space-y-10"  onSubmit={sendEmail} >
           <div className="space-y-3">
             <label className="text-[10px] font-black text-[#8A2BE2] uppercase tracking-[0.3em] ml-2">Name</label>
             <input 

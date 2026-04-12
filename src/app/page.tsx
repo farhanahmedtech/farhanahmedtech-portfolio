@@ -1,5 +1,9 @@
-import HeroSection  from "./home/page";
+import HeroSection  from "./components/HeroSection";
 
+// export const metadata = {
+//   title: "Farhan Ahmed | Developer",
+//   description: "Welcome to my portfolio website",
+// };
 
 export default function RetroFuturismPortfolio() {
   return (
@@ -10,4 +14,3 @@ export default function RetroFuturismPortfolio() {
     </div>
   );
 }
-

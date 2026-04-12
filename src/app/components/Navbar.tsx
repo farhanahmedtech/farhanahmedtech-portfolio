@@ -20,7 +20,7 @@ export default function Navbar () {
           {['Home', 'About', 'Skills', 'Contact'].map((item) => (
             <Link 
               key={item} 
-              href={item === "HeroSection" ? "/" : `/${item.toLowerCase()}`}
+              href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
               className={`text-sm font-['Space_Grotesk'] font-medium text-slate-400 uppercase tracking-widest transition-colors hover:text-purple-400`}
             >
               {item}
@@ -46,7 +46,7 @@ export default function Navbar () {
           {['Home', 'About', 'Skills', 'Contact'].map((item) => (
             <Link 
               key={item} 
-              href={item === "HeroSection" ? "/" : `/${item.toLowerCase()}`}
+              href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
               onClick={() => setIsOpen(false)}
               className="text-lg font-['Space_Grotesk'] font-bold text-slate-300 hover:text-purple-400"
             >

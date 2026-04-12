@@ -20,7 +20,7 @@ export default function Footer  () {
             <ul className="space-y-4 font-['Space_Grotesk']">
               {['Home', 'About', 'Projects', 'Skills', 'Contact'].map(link => (
                 <li key={link}>
-                  <Link href={`${link.toLowerCase()}`} className="text-[#faf8fe]/40 hover:text-[#d095ff] text-sm transition-colors">{link}</Link>
+                  <Link href={link === "Home" ? "/" : `/${link.toLowerCase()}`} className="text-[#faf8fe]/40 hover:text-[#d095ff] text-sm transition-colors">{link}</Link>
                 </li>
               ))}
             </ul>
